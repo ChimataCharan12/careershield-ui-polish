@@ -104,6 +104,31 @@ function SkillGapPage() {
             <button onClick={analyze} className="mt-4 w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-brand-gradient text-white font-semibold shadow-md">
               <Search className="w-4 h-4" /> Analyze Skill Gap
             </button>
+
+            {/* Informational cards */}
+            <div className="mt-4 space-y-3">
+              <div className="rounded-lg p-3 flex items-start gap-3" style={{ backgroundColor: "#FEF2F2", border: "1px solid #FECACA" }}>
+                <AlertTriangle className="w-5 h-5 shrink-0 mt-0.5" style={{ color: "#DC2626" }} />
+                <div className="flex-1 text-xs">
+                  <div className="font-semibold" style={{ color: "#DC2626" }}>Please enter at least one skill</div>
+                  <div className="text-muted-foreground mt-0.5">Add your current skills to analyze the gap.</div>
+                </div>
+              </div>
+              <div className="rounded-lg p-3 flex items-start gap-3" style={{ backgroundColor: "#FFFBEB", border: "1px solid #FDE68A" }}>
+                <AlertTriangle className="w-5 h-5 shrink-0 mt-0.5" style={{ color: "#D97706" }} />
+                <div className="flex-1 text-xs">
+                  <div className="font-semibold" style={{ color: "#D97706" }}>Some skills were not recognized and ignored</div>
+                  <div className="text-muted-foreground mt-0.5">Unknown Skills: ABCXYZSkill, RandomTech</div>
+                </div>
+              </div>
+              <div className="rounded-lg p-3 flex items-start gap-3" style={{ backgroundColor: "#EFF6FF", border: "1px solid #BFDBFE" }}>
+                <Info className="w-5 h-5 shrink-0 mt-0.5" style={{ color: "#2563EB" }} />
+                <div className="flex-1 text-xs">
+                  <div className="font-semibold" style={{ color: "#2563EB" }}>Analysis is independent</div>
+                  <div className="text-muted-foreground mt-0.5">You can run Skill Gap Analysis even if you haven't done Risk Prediction.</div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Result */}

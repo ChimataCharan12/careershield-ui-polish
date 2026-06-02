@@ -76,10 +76,6 @@ function SingleAnalysis() {
     funds: "", laidOffPct: "", laidOffCount: "",
   });
 
-  const reset = () => {
-    setForm({ industry: "", location: "", country: "", stage: "", funds: "", laidOffPct: "", laidOffCount: "" });
-    setRiskResult(null);
-  };
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();

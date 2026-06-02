@@ -76,8 +76,22 @@ function HomePage() {
               </a>
             </div>
           </div>
-          <div className="flex justify-center">
-            <img src={heroAsset.url} alt="AI Shield" className="w-full max-w-xl drop-shadow-[0_0_40px_rgba(0,163,255,0.4)]" />
+          <div className="relative flex justify-center items-center">
+            {/* Radial glow halo behind the shield to make image feel integrated */}
+            <div
+              aria-hidden
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background:
+                  "radial-gradient(circle at 50% 55%, rgba(0,163,255,0.45) 0%, rgba(91,33,255,0.25) 30%, rgba(2,11,45,0) 65%)",
+                filter: "blur(20px)",
+              }}
+            />
+            <img
+              src={heroAsset.url}
+              alt="AI Shield"
+              className="relative w-full max-w-xl mix-blend-screen drop-shadow-[0_0_60px_rgba(0,163,255,0.55)]"
+            />
           </div>
         </div>
       </section>

@@ -152,24 +152,24 @@ function PrioritySection({ color, title, subtitle, skills }: { color: "danger" |
     success: { bg: "#F0FDF4", text: "#16A34A" },
   };
   return (
-    <div className="grid grid-cols-[140px_1fr] gap-4">
-      <div className="rounded-lg p-3 self-start" style={{ backgroundColor: map[color].bg }}>
+    <div className="grid grid-cols-[130px_1fr] gap-3">
+      <div className="rounded-lg p-3 flex flex-col justify-center" style={{ backgroundColor: map[color].bg }}>
         <div className="font-semibold text-sm" style={{ color: map[color].text }}>{title}</div>
-        <div className="text-[10px]" style={{ color: map[color].text, opacity: 0.75 }}>{subtitle}</div>
+        <div className="text-[10px] mt-0.5" style={{ color: map[color].text, opacity: 0.75 }}>{subtitle}</div>
       </div>
-      <div className="space-y-2">
+      <div className="space-y-1.5">
         {skills.map((s) => (
-          <div key={s.name} className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/40 border border-transparent hover:border-border">
-            <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-brand">{s.name.slice(0, 2).toUpperCase()}</div>
+          <div key={s.name} className="flex items-center gap-2 p-2 rounded-lg hover:bg-muted/40 border border-transparent hover:border-border">
+            <div className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-brand shrink-0">{s.name.slice(0, 2).toUpperCase()}</div>
             <div className="flex-1 min-w-0">
               <div className="font-semibold text-sm">{s.name}</div>
-              <div className="text-xs text-muted-foreground">{s.desc}</div>
+              <div className="text-xs text-muted-foreground truncate">{s.desc}</div>
             </div>
-            <div className="text-xs hidden sm:block">
+            <div className="text-xs hidden sm:block shrink-0">
               <div className={`font-semibold ${s.demand === "High" ? "text-success" : s.demand === "Medium" ? "text-warning" : "text-brand"}`}>↗ {s.demand} Demand</div>
               <div className="text-muted-foreground">Impact: {s.impact}</div>
             </div>
-            <a href="https://example.com" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg border border-brand text-brand text-xs font-semibold">
+            <a href="https://example.com" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg border border-brand text-brand text-xs font-semibold shrink-0">
               Learn Resources <ExternalLink className="w-3 h-3" />
             </a>
           </div>

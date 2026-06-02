@@ -147,15 +147,15 @@ function Pill({ icon: Icon, label, value, color }: { icon: React.ComponentType<{
 
 function PrioritySection({ color, title, subtitle, skills }: { color: "danger" | "warning" | "success"; title: string; subtitle: string; skills: { name: string; desc: string; demand: string; impact: string }[] }) {
   const map = {
-    danger: { bg: "bg-danger-soft/40", text: "text-danger" },
-    warning: { bg: "bg-warning-soft/40", text: "text-warning" },
-    success: { bg: "bg-success-soft/40", text: "text-success" },
+    danger: { bg: "#FFF1F2", text: "#DC2626" },
+    warning: { bg: "#FFFBEB", text: "#D97706" },
+    success: { bg: "#F0FDF4", text: "#16A34A" },
   };
   return (
     <div className="grid grid-cols-[140px_1fr] gap-4">
-      <div className={`rounded-lg p-3 ${map[color].bg} self-start`}>
-        <div className={`font-semibold text-sm ${map[color].text}`}>{title}</div>
-        <div className="text-[10px] text-muted-foreground">{subtitle}</div>
+      <div className="rounded-lg p-3 self-start" style={{ backgroundColor: map[color].bg }}>
+        <div className="font-semibold text-sm" style={{ color: map[color].text }}>{title}</div>
+        <div className="text-[10px]" style={{ color: map[color].text, opacity: 0.75 }}>{subtitle}</div>
       </div>
       <div className="space-y-2">
         {skills.map((s) => (

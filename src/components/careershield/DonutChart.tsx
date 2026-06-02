@@ -24,8 +24,12 @@ export function DonutChart({
   let acc = 0;
   const c = 2 * Math.PI * r;
 
+  // Scale center text relative to chart size so it always fits inside the donut
+  const labelSize = Math.round(size * 0.18);
+  const subSize = Math.max(10, Math.round(size * 0.07));
+
   return (
-    <div className="relative inline-block">
+    <div className="relative inline-block" style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="-rotate-90">
         <circle cx={cx} cy={cy} r={r} stroke="#f1f5f9" strokeWidth={thickness} fill="none" />
         {slices.map((s, i) => {
@@ -50,9 +54,17 @@ export function DonutChart({
         })}
       </svg>
       {(centerLabel || centerSub) && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
-          {centerLabel && <div className="text-3xl font-bold text-foreground">{centerLabel}</div>}
-          {centerSub && <div className="text-xs text-muted-foreground">{centerSub}</div>}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center leading-none">
+          {centerLabel && (
+            <div className="font-bold text-foreground" style={{ fontSize: labelSize, lineHeight: 1 }}>
+              {centerLabel}
+            </div>
+          )}
+          {centerSub && (
+            <div className="text-muted-foreground mt-1" style={{ fontSize: subSize, lineHeight: 1 }}>
+              {centerSub}
+            </div>
+          )}
         </div>
       )}
     </div>

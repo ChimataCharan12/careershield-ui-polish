@@ -133,11 +133,10 @@ function SingleAnalysis() {
               <Input label="Percentage Laid Off (%)" required value={form.laidOffPct} onChange={(v) => setForm({ ...form, laidOffPct: v })} placeholder="Enter percentage (0-100)" type="number" />
             </div>
             <Input label="Laid Off Count" required value={form.laidOffCount} onChange={(v) => setForm({ ...form, laidOffCount: v })} placeholder="Enter laid off count" type="number" />
-            <div className="flex gap-3 pt-2">
-              <button type="submit" className="flex-1 inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-brand-gradient text-white font-semibold shadow-md hover:opacity-90">
+            <div className="pt-2">
+              <button type="submit" className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-brand-gradient text-white font-semibold shadow-md hover:opacity-90">
                 <TrendingUp className="w-4 h-4" /> Predict Layoff Risk
               </button>
-              <button type="button" onClick={reset} className="px-5 py-3 rounded-xl border border-border text-sm font-medium hover:bg-muted">Reset</button>
             </div>
           </form>
         </div>
